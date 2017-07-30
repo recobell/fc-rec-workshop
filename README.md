@@ -7,6 +7,8 @@
 * [PIP 설치](https://pip.pypa.io/en/stable/installing/)
 * [pandas 설치](http://pandas.pydata.org/)
     > `pip install pandas`
+* [scipy 설치](https://www.scipy.org/install.html)
+    > `pip install scipy`
 * [scikit-learn 설치](http://scikit-learn.org/stable/install.html)
     > `pip install -U scikit-learn`
 
@@ -14,7 +16,7 @@
 * http://jupyter.org/install.html
 
 ### 1.3 실습 데이터 다운로드
-* Movielens [ml-latest-small.zip](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)
+* ~~Movielens [ml-latest-small.zip](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)~~
 * Movielens [ml-latest-small-fastcampus.zip](https://s3.ap-northeast-2.amazonaws.com/ym-education/fastcampus/ml-latest-small-fastcampus.zip)
 
 ### 1.4 성능 평가 실습
@@ -39,9 +41,8 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
     * Sparse Vector and Matrix
 * 유사도 함수
     * TF-IDF
-    * Distance/Similarity
     * Pearson Correlation
-* Top-K 추천: Precision@K
+    * Cosine Similarity
 
 ### 2.2 User Profile based CBF 알고리즘을 이용한 영화 로직 구현
 * 아이템 메타데이터를 이용해서 아이템간 유사도를 계산
