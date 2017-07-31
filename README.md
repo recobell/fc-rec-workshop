@@ -31,27 +31,29 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 
 ## 2. Exploiting Explicit Feedback - 평점 예측을 이용한 영화 추천
 
-### 2.1 PostgreSQL 설치 및 설정
+### PostgreSQL 설치 및 설정
 * https://www.postgresql.org/download/
 * Create DB: fcrec
 * Create User: fcuser//fcuser123
 
-### 2.2 Math Background
+### 2.1 Math Background
 * Vector and Matrix 표현
-    * Sparse Vector and Matrix
 * 유사도 함수
     * TF-IDF
-    * Pearson Correlation
     * Cosine Similarity
+    * Pearson Correlation
+* [exercise-2.1.ipynb](movielens/exercise-2.1.ipynb)
 
 ### 2.2 User Profile based CBF 알고리즘을 이용한 영화 로직 구현
 * 아이템 메타데이터를 이용해서 아이템간 유사도를 계산
 * 사용자 프로파일을 사용자 평점을 부여한 아이템 목록으로 표현
 * 아이템 목록에 있는 아이템과 유사한 다른 아이템들을 추천 아이템으로 생성
+* [exercise-2.2.ipynb](movielens/exercise-2.2.ipynb)
 
 ### 2.3 Regression Model을 이용한 평점 예측 기반 영화 추천 로직 구현
 * 회귀 모델 (regression model)을 이용하여 사용자 프로파일 생성
 * 회귀 모델 프로파일을 이용하여 아이템 평점 예측
+* [exercise-2.3.ipynb](movielens/exercise-2.3.ipynb)
 
 ### 2.4 Item-based CF 알고리즘을 이용한 영화 추천 로직 구현
 * 평점 분포를 이용한 아이템간 유사도 계산
