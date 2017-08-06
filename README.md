@@ -55,7 +55,7 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 * 사용자 프로파일을 사용자 평점을 부여한 아이템 목록으로 표현
 * 아이템 목록에 있는 아이템과 유사한 다른 아이템들을 추천 아이템으로 생성
 
-## 3. Exploiting Implicit Feedback - 
+## 3. Exploiting Implicit Feedback - 트랜잭션 데이터 기반 e-commerce 상품 추천
 
 ### 데이터 다운로드 및 Postgresql 생성
 * Download Commerce Data
