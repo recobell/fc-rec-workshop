@@ -1,26 +1,3 @@
--- refine
-drop table if exists view_log;
-create table view_log as
-select * from site_view_log where server_time > '2016-10-01';
-drop table if exists order_log;
-create table order_log as
-select * from site_order_log where server_time > '2016-10-01';
-drop table if exists product;
-create table product as select * from site_product;
-
--- co-occurence
--- tf-idf (log scale)
-
--- cosine similarity
-
-
-select * from view_log limit 100;
-select * from order_log limit 100;
-select * from product limit 100;
-drop index if exists i_product_id;
-create index i_product_id on product(item_id);
-
-
 -- coo_rel
 drop index if exists i_view_coo_rel;
 create index i_view_coo_rel on view_log(uid, session_id, item_id);
@@ -48,12 +25,6 @@ from (
 
 drop index if exists i_coo_rel;
 create index i_coo_rel on coo_rel(target_item_id, rank);
-
--- 413b7b7
--- 7d5cb7f
-select * from site_product where item_id in ('413b7b7', '7d5cb7f');
-select * from coo_rel where target_item_id in ('413b7b7', '7d5cb7f');
-
 
 -- td-idf
 -- 1. idf
@@ -147,7 +118,3 @@ from (
 		group by a.item_id, b.item_id
 	) a
 ) a;
-
-select * from coo_rel where target_item_id = '413b7b7';
-select * from tfidf_rel where target_item_id = '413b7b7';
-select * from coo_cs_rel where target_item_id = '413b7b7';
