@@ -38,7 +38,7 @@ create table site_product (
 	category2	char(7),
 	category3	char(7),
 	category4	char(7),
-	brarnd	char(7)
+	brand		char(7)
 );
 
 copy site_view_log

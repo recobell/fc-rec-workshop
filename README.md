@@ -57,21 +57,25 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 
 ## 3. Exploiting Implicit Feedback - 
 
-### Download Commerce Data
-* [View Log]( http://pakdd2017.recobell.io/site_view_log_small.csv000.gz)
-* [Order Log]( http://pakdd2017.recobell.io/site_order_log_small.csv000.gz)
-* [Product Metadata]( http://pakdd2017.recobell.io/site_product_w_img.csv000.gz)
-
-### PostgreSQL 설치 및 DB 생성
-* [다운로드 및 설치](https://www.postgresql.org/download/)
+### 데이터 다운로드 및 Postgresql 생성
+* Download Commerce Data
+    * [View Log]( http://pakdd2017.recobell.io/site_view_log_small.csv000.gz)
+    * [Order Log]( http://pakdd2017.recobell.io/site_order_log_small.csv000.gz)
+    * [Product Metadata]( http://pakdd2017.recobell.io/site_product_w_img.csv000.gz)
+* [PostgreSQL 설치 및 DB 생성](https://www.postgresql.org/download/)
 * 실습용 DB 생성
     * Create DB: fcrec
     * Create User: fcuser//fcuser123
     * [init-db.sql](init-db.sql)
 
-### 3.0 사전 준비
-* 테이블 생성 및 데이터 로딩: [01init.sql](commerce/01init.sql)
-* 추천을 생성을 위한 테이블 생성: [02refine.sql](commerce/02refine.sql)
+### 3.0 데이터 로딩 및 확인 
+* 테이블 생성 및 데이터 로딩: 
+    * [01init.sql](commerce/01init.sql)
+    * [02refine.sql](commerce/02refine.sql)
+* psycopg2 설치
+    > `pip install psycopg2`
+* Jupyter에서의 DB 데이터 조회
+    * [exercise-3.0.ipynb](commerce/exercise-3.0.ipynb)
 
 ### 3.1 Best Recommendation
 * 조회 기반 베스트
