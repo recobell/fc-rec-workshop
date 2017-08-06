@@ -31,11 +31,6 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 
 ## 2. Exploiting Explicit Feedback - 평점 예측을 이용한 영화 추천
 
-### PostgreSQL 설치 및 설정
-* https://www.postgresql.org/download/
-* Create DB: fcrec
-* Create User: fcuser//fcuser123
-
 ### 2.1 Math Background
 * Vector and Matrix 표현
 * 유사도 함수
@@ -59,3 +54,39 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 * 평점 분포를 이용한 아이템간 유사도 계산
 * 사용자 프로파일을 사용자 평점을 부여한 아이템 목록으로 표현
 * 아이템 목록에 있는 아이템과 유사한 다른 아이템들을 추천 아이템으로 생성
+
+## 3. Exploiting Implicit Feedback - 
+
+### Download Commerce Data
+* [View Log]( http://pakdd2017.recobell.io/site_view_log_small.csv000.gz)
+* [Order Log]( http://pakdd2017.recobell.io/site_order_log_small.csv000.gz)
+* [Product Metadata]( http://pakdd2017.recobell.io/site_product_w_img.csv000.gz)
+
+### PostgreSQL 설치 및 DB 생성
+* [다운로드 및 설치](https://www.postgresql.org/download/)
+* 실습용 DB 생성
+    * Create DB: fcrec
+    * Create User: fcuser//fcuser123
+    * [init-db.sql](init-db.sql)
+
+### 3.0 사전 준비
+* 테이블 생성 및 데이터 로딩: [01init.sql](commerce/01init.sql)
+* 추천을 생성을 위한 테이블 생성: [02refine.sql](commerce/02refine.sql)
+
+### 3.1 Best Recommendation
+* 조회 기반 베스트
+* 구매 기반 베스트
+* 사이트 전체 베스트
+* 카테고리 별 베스트
+* [03best.sql](commerce/03best.sql)
+
+### 3.2 Related Recommendation
+* 사용자 기준 연관 추천
+* 세션 기준 연관 추천
+* 인접 기준 연관 추천
+* [04rel.sql](commerce/04rel.sql)
+
+### 3.3 Personalized Recommendation
+* 연관 추천을 이용한 개인화
+* KNN 기반 개인화
+* [05personalized.sql](commerce/05personalized.sql)

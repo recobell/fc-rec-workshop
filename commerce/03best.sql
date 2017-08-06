@@ -1,6 +1,7 @@
 -- best
 -- 1. click best
 drop table if exists product_click_best;
+
 create table product_click_best as
 select
 	item_id,
@@ -15,8 +16,10 @@ from (
 	group by item_id
 ) a;
 
+
 -- 2. order best
 drop table if exists product_order_best;
+
 create table product_order_best as
 select
 	item_id,
@@ -40,8 +43,10 @@ from (
 	inner join product b on a.item_id = b.item_id
 ) a;
 
+
 -- 3. best for mall -- aggregating view + 10 order
 drop table if exists product_best;
+
 create table product_best as
 select
 	item_id,
@@ -59,8 +64,10 @@ from (
 	group by item_id
 ) a;
 
+
 -- 4. category1 best from best for mall
 drop table if exists category1_best;
+
 create table category1_best as
 select 
 	category,
