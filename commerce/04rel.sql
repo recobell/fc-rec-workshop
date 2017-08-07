@@ -50,11 +50,11 @@ group by item_id; -- df
 drop table if exists item_idf;
 
 create table item_idf as
-select
-	item_id,
+select item_id, 
 	log((select count(distinct session_id) from view_log)/
-		(count(session_id) over (partition by item_id) + 1)) idf
-from view_log a;
+		(count(distinct session_id) + 1)) idf
+from view_log a
+group by item_id;
 
 create index idx_idf on item_idf(item_id, idf);
 

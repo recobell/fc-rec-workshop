@@ -101,4 +101,4 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 ### 3.3 Personalized Recommendation
 * 연관 추천을 이용한 개인화
 * KNN 기반 개인화
-* [05personalized.sql](commerce/05personalized.sql)
+* [05knn.sql](commerce/05knn.sql)
