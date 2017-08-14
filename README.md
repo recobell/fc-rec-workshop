@@ -102,3 +102,12 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 * 연관 추천을 이용한 개인화
 * KNN 기반 개인화
 * [05knn.sql](commerce/05knn.sql)
+
+## 4. 고급 추천 시스템
+
+### 4.1 Matrix Factorization
+* SVD를 이용한 유저와 아잉템 추상화
+* 추상화된 아이템 간의 유사도 계산
+* [exercise-4.1.ipynb](movielens/exercise-4.1.ipynb)
+
+### 4.2 Weighted Randome Selection
