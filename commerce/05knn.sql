@@ -17,7 +17,7 @@ from (
 		max(server_time) server_time
 	from view_log
 	group by uid, session_id, item_id
-) a
+) a;
 
 
 drop table if exists session_view;
@@ -53,12 +53,12 @@ from (
 ) a
 inner join session_item_view b on a.session_id = b.session_id;
 
-drop table if exists knn_tfidf;
+drop table if exists knn_idf;
 
-create table knn_tfidf as
+create table knn_idf as
 select
 	a.item_id,
-	log(b.session_cnt::float / a.session_per_item::float) as tfidf_score
+	log(b.session_cnt::float / a.session_per_item::float) as idf_score
 from 
 	(select item_id, count(distinct session_id) session_per_item from session_item_view_filter group by item_id) a,
 	(select count(distinct session_id) session_cnt from session_item_view_filter) b	;
@@ -72,9 +72,9 @@ select
 	a.item_id,
 	a.view_cnt,
 	a.rank,
-	b.tfidf_score
+	b.idf_score
 from session_item_view_filter a
-left outer join knn_tfidf b on a.item_id = b.item_id;
+left outer join knn_idf b on a.item_id = b.item_id;
 
 drop table if exists session_neighbor_occurence;
 
@@ -105,13 +105,13 @@ from (
 				a.session_id target_session_id,
 				b.session_id neighbor_session_id,
 				count(*) coo_cnt,
-				sum(b.tfidf_score) neighbor_score
+				sum(b.idf_score) neighbor_score
 			from (
 				select 
 					uid,
 					session_id,
 					item_id,
-					tfidf_score
+					idf_score
 				from session_item_view_filter_score
 				where rank = 1
 			) a
@@ -146,7 +146,7 @@ from (
 			a.target_session_id,
 			a.item_id,
 			count(*) item_neighbor_cnt,
-			sum(a.neighbor_score * c.tfidf_score)::float score
+			sum(a.neighbor_score * c.idf_score)::float score
 		from (
 			select
 				a.neighbor_session_id,
@@ -158,7 +158,7 @@ from (
 			inner join session_item_view b on a.neighbor_session_id = b.session_id
 		)a
 		left outer join session_item_view b on a.target_session_id = b.session_id and a.item_id = b.item_id
-		inner join knn_tfidf c on a.item_id = c.item_id
+		inner join knn_idf c on a.item_id = c.item_id
 		group by a.target_uid, a.target_session_id, a.item_id
 	)a
 	where item_neighbor_cnt > 3

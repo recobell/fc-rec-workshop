@@ -82,3 +82,12 @@ from (
 	from product_best a
 	inner join product b on a.item_id = b.item_id
 ) a;
+
+
+-- 5. conversion_rate 를 이용한 best 만들기
+-- 6. category2 best 만들기
+
+
+
+
+
