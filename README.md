@@ -1,4 +1,4 @@
-# 2017 파이썬으로 배우는 추천시스템 Workshop
+# 파이썬과 SQL로 배우는 추천시스템 Workshop
 
 ## 1. 실습 환경 구축
 
@@ -104,7 +104,7 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
 * [exercise-4.1.ipynb](movielens/exercise-4.1.ipynb)
 
 ### 4.2 Matrix Factorization
-* SVD를 이용한 유저와 아잉템 추상화
+* SVD를 이용한 유저와 아이템 추상화
 * 추상화된 아이템 간의 유사도 계산
 * [exercise-4.2.ipynb](movielens/exercise-4.2.ipynb)
 
