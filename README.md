@@ -65,36 +65,36 @@ Movielens 평점 데이터를 기반으로 MAE와 RMSE를 계산하는 실습을
     * [Product Metadata]( http://pakdd2017.recobell.io/site_product_w_img.csv000.gz)
 * [PostgreSQL 설치 및 DB 생성](https://www.postgresql.org/download/)
 * 실습용 DB 생성
-    * Create DB: fcrec
-    * Create User: fcuser//fcuser123
     * [init-db.sql](init-db.sql)
 
-### 3.0 데이터 로딩 및 확인 
-* 테이블 생성 및 데이터 로딩: 
-    * [01init.sql](commerce/01init.sql)
-    * [02refine.sql](commerce/02refine.sql)
-* psycopg2 설치
-    > `pip install psycopg2`
-* Jupyter에서의 DB 데이터 조회
-    * [exercise-3.0.ipynb](commerce/exercise-3.0.ipynb)
 
-### 3.1 Best Recommendation
+### 3.1 Database Test
+* psycopg2 및 ipython-sql 설치
+    > `pip install psycopg2`
+    > `pip install ipython-sql`
+* Jupyter에서의 DB 데이터 조회
+    * [exercise-3.1.ipynb](commerce/exercise-3.1.ipynb)
+
+### 3.2 데이터 로딩 및 확인 
+* [exercise-3.2.ipynb](commerce/exercise-3.2.ipynb)
+
+### 3.3 Best Recommendation
 * 조회 기반 베스트
 * 구매 기반 베스트
 * 사이트 전체 베스트
 * 카테고리 별 베스트
-* [03best.sql](commerce/03best.sql)
+* [exercise-3.3.ipynb](commerce/exercise-3.3.ipynb)
 
-### 3.2 Related Recommendation
+### 3.4 Related Recommendation
 * 사용자 기준 연관 추천
 * 세션 기준 연관 추천
 * 인접 기준 연관 추천
-* [04rel.sql](commerce/04rel.sql)
+* [exercise-3.4.ipynb](commerce/exercise-3.4.ipynb)
 
 ### 3.3 Personalized Recommendation
 * 연관 추천을 이용한 개인화
 * KNN 기반 개인화
-* [05knn.sql](commerce/05knn.sql)
+* [exercise-3.5.ipynb](commerce/exercise-3.5.ipynb)
 
 ## 4. 고급 추천 시스템
 
