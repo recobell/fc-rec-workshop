@@ -9,3 +9,6 @@ def displayImageUrls(urls):
 def getImageUrls(rows, column_name = 'item_image'):
     images = [x[column_name] for x in rows]
     return images
+
+def displayImageInRows(rows):
+    displayImageUrls(getImageUrls(rows))
